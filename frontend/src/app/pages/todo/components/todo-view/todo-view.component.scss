@@ -1,0 +1,25 @@
+@import "src/app/shared/variables";
+
+.todo_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo_container__check_btn {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $contrast-darker-tint;
+}
+
+//.todo_container__check_btn:hover {
+//  background-color: ;
+//}
+
+.todo_container__task {
+
+}
+
+.todo_container__deadline {
+
+}
