@@ -3,14 +3,41 @@
 .todo_container {
   display: flex;
   justify-content: space-between;
+  background-color: $primary;
+  align-items: center;
+  padding: 4px 6px;
+  box-shadow: 5px 5px 10px #888888;
+  border-radius: 25px;;
+  cursor: pointer;
 }
 
-.todo_container__check_btn {
+.todo_container:active {
+  transform: translateY(5px) translateX(5px);
+  box-shadow: 1px 1px 10px #888888;
+}
+
+.check_task_container {
+  display: flex;
+  align-items: center;
+}
+
+.check_btn {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  border: 1px solid $contrast-darker-tint;
+  border: 1px solid #bdc3c7;
+  margin-right: 15px;
+  background-color: white;
 }
+
+.deadline_severity {
+  display: flex;
+}
+
+.check_btn.done {
+  background-color: green;
+}
+
 
 //.todo_container__check_btn:hover {
 //  background-color: ;
@@ -22,4 +49,40 @@
 
 .todo_container__deadline {
 
+}
+
+.todo_task_input {
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  width: 550px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.deadline {
+  margin-right: 18px;
+}
+
+.deadline .deadline_calendar {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.severity {
+  display: flex;
+  align-items: center;
+}
+
+.severity img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.delete_btn {
+  color: red;
 }

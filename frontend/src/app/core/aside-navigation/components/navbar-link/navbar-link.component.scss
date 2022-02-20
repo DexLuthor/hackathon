@@ -1,0 +1,36 @@
+li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 10px 5px;
+  list-style: none;
+  line-height: 50px;
+}
+
+li a {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  transition: all .4s ease;
+  border-radius: 12px;
+  padding: 5px 10px;
+}
+
+li a:hover {
+  color: #11101d;
+  background: white;
+}
+
+li a .link_icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+
+li a .link_name {
+  text-transform: capitalize;
+}

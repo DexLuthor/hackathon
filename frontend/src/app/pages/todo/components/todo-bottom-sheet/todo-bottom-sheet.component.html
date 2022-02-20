@@ -1,0 +1,11 @@
+<input [(ngModel)]="task" placeholder="Rewrite the law" type="text">
+<div class="severity">
+  <img alt="low" class="severity-icon" src="assets/images/chevron-up.svg">
+  <img alt="middle" class="severity-icon" src="assets/images/chevrons-up.svg">
+  <img alt="high" class="severity-icon" src="assets/images/chevrons-up.svg">
+</div>
+<!--<input type="datetime-local">-->
+<div class="bottom_buttons">
+  <button (click)="save()">Save</button>
+  <button (click)="cancel()">Cancel</button>
+</div>

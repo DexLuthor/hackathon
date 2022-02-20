@@ -1,0 +1,29 @@
+<nav class="sidebar">
+  <div class="logo_content">
+    <div class="logo">
+      <mat-icon class="logo_img">check</mat-icon>
+      <div class="logo_name">2Do || !2Do</div>
+    </div>
+    <mat-icon (click)="onMenuClick()" class="menu">menu</mat-icon>
+  </div>
+
+  <ul class="nav_list">
+    <navbar-link *ngFor="let navLink of navLinks"
+                 [icon]="navLink.icon"
+                 [title]="navLink.title"
+    ></navbar-link>
+  </ul>
+
+  <div class="profile_content">
+    <div class="profile">
+      <div class="profile_details">
+        <img alt="photo" src="../../../../../assets/images/photo.jpg">
+        <div class="name_email">
+          <div class="name">Zheka</div>
+          <div class="email">Email</div>
+        </div>
+      </div>
+      <mat-icon (click)="logout()" class="logout">logout</mat-icon>
+    </div>
+  </div>
+</nav>

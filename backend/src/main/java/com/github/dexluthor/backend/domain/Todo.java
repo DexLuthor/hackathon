@@ -1,6 +1,18 @@
 package com.github.dexluthor.backend.domain;
 
-import org.bson.types.ObjectId;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.UUID;
 
 // todo wiring with ObjectId
-public record Todo(ObjectId id, String task) {}
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Todo {
+    private UUID publicId;
+    private String task;
+    private boolean isDone;
+
+}

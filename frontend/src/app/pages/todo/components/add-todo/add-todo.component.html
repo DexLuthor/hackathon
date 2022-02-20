@@ -1,0 +1,36 @@
+<div (click)="onClick()" class="todo_container">
+  <input
+    [(ngModel)]="task"
+    class="todo_task_input"
+    placeholder="Add 2Do..."
+    type="text"
+  >
+  <div class="deadline_severity">
+    <div class="deadline">
+      <!--      <input type="datetime-local">-->
+      <img
+        (click)="onCalendarClick()"
+        alt="calendar"
+        class="deadline_calendar"
+        src="assets/images/calendar-1.svg"
+      >
+    </div>
+    <div class="severity">
+      <img
+        (click)="onSeverityIconClick(0)"
+        [ngClass]="{'active':activeSeverity===0}"
+        alt="low severity"
+        src="assets/images/chevron-up.svg">
+      <img
+        (click)="onSeverityIconClick(1)"
+        [ngClass]="{'active':activeSeverity===1}"
+        alt="middle severity"
+        src="assets/images/chevrons-up.svg">
+      <img
+        (click)="onSeverityIconClick(2)"
+        [ngClass]="{'active':activeSeverity===2}"
+        alt="high severity"
+        src="assets/images/chevrons-up.svg">
+    </div>
+  </div>
+</div>

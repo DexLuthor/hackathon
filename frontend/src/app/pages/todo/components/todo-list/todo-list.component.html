@@ -1,1 +1,11 @@
-<todo-view *ngFor="let todo of todos | async" [todo]="todo"></todo-view>
+<add-todo (onAddTodo)="onAddTodo($event)" class="add-todo"></add-todo>
+
+<todo-view
+  (onChecked)="onChecked(todo, $event)"
+  (onDelete)="onDelete(todo.publicId!)"
+  (onEdit)="onEdit(todo)"
+  *ngFor="let todo of todos"
+  [checkSound]="checkSound"
+  [todo]="todo"
+  class="todo-view"
+></todo-view>

@@ -3,10 +3,11 @@ package com.github.dexluthor.backend.adaptors.rest.controllers;
 import com.github.dexluthor.backend.domain.Todo;
 import com.github.dexluthor.backend.services.ITodoService;
 import lombok.RequiredArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
@@ -20,9 +21,9 @@ public class TodoController {
         return todoService.findAll();
     }
 
-    @GetMapping("{id}")
-    Mono<Todo> findById(@PathVariable ObjectId id) {//todo wiring
-        return todoService.findById(id);
+    @GetMapping("{publicId}")
+    Mono<Todo> findById(@PathVariable UUID publicId) {//todo wiring
+        return todoService.findById(publicId);
     }
 
     @PostMapping
@@ -30,9 +31,9 @@ public class TodoController {
         return todoService.save(todo);
     }
 
-    @DeleteMapping("delete/{id}")
-    Mono<Void> delete(@PathVariable ObjectId id) {
-        return todoService.delete(id);
+    @DeleteMapping("delete/{publicId}")
+    Mono<Void> delete(@PathVariable UUID publicId) {
+        return todoService.delete(publicId);
     }
 
     @PatchMapping

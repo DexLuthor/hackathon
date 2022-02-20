@@ -1,5 +1,27 @@
-<div class="todo_container">
-  <button class="todo_container__check_btn"></button>
-  <span class="todo_container__task">Lorem ipsum dolor sit amet</span>
-  <span class="todo_container__deadline">tomorrow</span>
+<div *ngIf="todo" [matMenuTriggerFor]="menu" class="todo_container">
+  <div class="check_task_container">
+    <button (click)="onCheckClicked($event)"
+            [ngClass]="{'done': isDone(), 'undone': !isDone()}"
+            class="check_btn"
+    ></button>
+    <span class="todo_container__task">{{ todo.task }}</span>
+  </div>
+  <div class="deadline_severity">
+    <div class="deadline">
+      <span class="deadline_calendar"> Lorem ipsum dolor.</span>
+    </div>
+    <div class="severity">
+      <img [src]="resolveSeverityIcon()" alt="severity">
+    </div>
+  </div>
 </div>
+<mat-menu #menu="matMenu" class="todo-view-menu" xPosition="before">
+  <button (click)="onDeleteClicked()" class="delete_btn" mat-menu-item>
+    <mat-icon>delete</mat-icon>
+    Delete
+  </button>
+  <button (click)="onEditClicked()" mat-menu-item>
+    <mat-icon>edit</mat-icon>
+    Edit
+  </button>
+</mat-menu>

@@ -1,0 +1,16 @@
+.severity {
+  display: flex;
+}
+
+.severity .severity-icon {
+  width: 30px;
+  height: 30px;
+  display: inline;
+}
+
+.bottom_buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: right;
+}
+
