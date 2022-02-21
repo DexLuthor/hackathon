@@ -19,6 +19,7 @@ import {AddTodoComponent} from './pages/todo/components/add-todo/add-todo.compon
 import {FormsModule} from "@angular/forms";
 import {SettingsModule} from "./pages/settings/settings.module";
 import {DateDiffPipe} from './shared/pipes/date-diff.pipe';
+import {ThreedotSlicePipe} from './shared/pipes/threedot-slice.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {DateDiffPipe} from './shared/pipes/date-diff.pipe';
     NavbarLinkComponent,
     TodoBottomSheetComponent,
     AddTodoComponent,
-    DateDiffPipe
+    DateDiffPipe,
+    ThreedotSlicePipe
   ],
   imports: [
     BrowserModule,

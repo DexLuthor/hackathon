@@ -3,7 +3,7 @@
      [ngClass]="{'done': isDone(), 'undone': !isDone()}"
      class="todo_container"
 >
-  <span class="todo_container__task">{{ todo.task }}</span>
+  <span class="todo_container__task">{{ todo.task | threedotSlice}}</span>
   <div class="deadline_severity">
     <div class="deadline">
       <span class="deadline_calendar">{{todo.dueDate | dateDiff}}</span>
