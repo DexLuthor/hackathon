@@ -3,24 +3,24 @@
 .todo_container {
   display: flex;
   justify-content: space-between;
-  background-color: $primary;
   opacity: .6;
   align-items: center;
-  padding: 4px 6px;
-  box-shadow: 5px 5px 10px #888888;
+
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 15px;
+  padding: 15px;
+  color: white;
+
+  cursor: pointer;
 }
 
 .deadline_severity {
   display: flex;
-}
-
-.todo_container__task {
-
-}
-
-.todo_container__deadline {
-
 }
 
 .todo_task_input {

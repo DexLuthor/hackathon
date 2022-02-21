@@ -5,10 +5,6 @@ B
 backend/.gitignore,7\e\7e16691a9fc60084a157565ec422c8094d3df67c
 J
 frontend/package-lock.json,7\5\75b3b81cff849b08343553e269c3327a04ab22e0
-u
-Efrontend/src/app/shared/components/not-found/not-found.component.scss,a\3\a3bafcbd491a60c6d9c0624734584c0c05a81020
-u
-Efrontend/src/app/shared/components/not-found/not-found.component.html,4\7\474b13e39690981498bcf85662b9c3e03cf96cd1
 [
 +frontend/src/assets/images/check-circle.svg,e\c\ecdd86adf445d992cd294223944bd4d3b730f781
 Y

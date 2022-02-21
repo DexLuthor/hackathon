@@ -3,11 +3,17 @@
 .todo_container {
   display: flex;
   justify-content: space-between;
-  background-color: $primary;
   align-items: center;
-  padding: 4px 6px;
-  box-shadow: 5px 5px 10px #888888;
-  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 15px;
+  padding: 15px;
+  color: white;
+
   cursor: pointer;
 }
 
@@ -30,25 +36,31 @@
   background-color: white;
 }
 
+.todo_container__task {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+  //text-shadow: 0 2px 4px rgb(71 97 206 / 36%);
+  top: 4px;
+
+
+  color: #fff;
+  text-shadow: 0 0 4px #fff,
+  0 0 11px #fff,
+  0 0 19px #fff,
+  0 0 40px #0fa,
+  0 0 80px #0fa,
+  0 0 90px #0fa,
+  0 0 100px #0fa,
+  0 0 150px #0fa;
+}
+
 .deadline_severity {
   display: flex;
 }
 
 .check_btn.done {
   background-color: green;
-}
-
-
-//.todo_container__check_btn:hover {
-//  background-color: ;
-//}
-
-.todo_container__task {
-
-}
-
-.todo_container__deadline {
-
 }
 
 .todo_task_input {

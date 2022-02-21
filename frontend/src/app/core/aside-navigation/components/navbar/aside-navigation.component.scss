@@ -12,7 +12,6 @@
 }
 
 .sidebar .logo_content .logo {
-  filter: invert(100%);
   display: flex;
   height: 50px;
   width: 100%;
@@ -20,6 +19,7 @@
 }
 
 .logo_content .logo .logo_img {
+  filter: invert(100%);
   font-size: 28px;
   margin-right: 5px;
 }
@@ -27,6 +27,15 @@
 .logo_content .logo .logo_name {
   font-size: 20px;
   font-weight: 400;
+  color: white;
+  text-shadow: 0 0 4px #fff,
+  0 0 11px #fff,
+  0 0 19px #fff,
+  0 0 40px #f09,
+  0 0 80px #f09,
+  0 0 90px #f09,
+  0 0 100px #f09,
+  0 0 150px #f09;
 }
 
 .sidebar .menu {
