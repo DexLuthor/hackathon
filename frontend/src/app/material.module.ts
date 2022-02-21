@@ -6,6 +6,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatGridListModule
   ],
   exports: [
     MatSidenavModule,
@@ -23,7 +25,8 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatGridListModule
   ]
 })
 export class MaterialModule {

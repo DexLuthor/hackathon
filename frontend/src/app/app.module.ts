@@ -17,6 +17,7 @@ import {TodoBottomSheetComponent} from './pages/todo/components/todo-bottom-shee
 import {MaterialModule} from "./material.module";
 import {AddTodoComponent} from './pages/todo/components/add-todo/add-todo.component';
 import {FormsModule} from "@angular/forms";
+import {SettingsModule} from "./pages/settings/settings.module";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    SettingsModule
   ],
   providers: [
     SnackBarService,

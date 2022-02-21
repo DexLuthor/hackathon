@@ -14,6 +14,10 @@ const routes: Routes = [
     component: ShowcaseComponent
   },
   {
+    path: "settings",
+    loadChildren: () => import("./pages/settings/settings.module").then(m => m.SettingsModule)
+  },
+  {
     path: "**",
     component: NotFoundComponent,
   }

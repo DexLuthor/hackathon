@@ -23,6 +23,11 @@ li a:hover {
   background: white;
 }
 
+li a.active-link {
+  color: #11101d;
+  background: white;
+}
+
 li a .link_icon {
   height: 50px;
   width: 50px;

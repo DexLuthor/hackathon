@@ -9,10 +9,9 @@ import {NavLinkModel} from "../../model/nav-link.model";
 export class AsideNavigationComponent implements OnInit {
   openSidebar = true
   navLinks: NavLinkModel[] = [
-    {icon: 'person', title: 'dashboard'},
-    {icon: 'people', title: 'metric'},
-    {icon: 'add', title: 'random'},
-    {icon: 'settings', title: 'settings'},
+    {icon: 'check', title: 'todos', routerLink: 'main'},
+    {icon: 'person', title: 'dashboard', routerLink: '#'},
+    {icon: 'settings', title: 'settings', routerLink: 'settings'},
   ];
 
   ngOnInit(): void {

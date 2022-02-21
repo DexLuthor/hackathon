@@ -9,6 +9,7 @@ export class NavbarLinkComponent implements OnInit {
 
   @Input() icon?: string
   @Input() title?: string
+  @Input() routerLink?: string
 
   ngOnInit(): void {
 

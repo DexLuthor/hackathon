@@ -11,7 +11,10 @@
     <navbar-link *ngFor="let navLink of navLinks"
                  [icon]="navLink.icon"
                  [title]="navLink.title"
+                 [routerLink]="navLink.routerLink"
+                 routerLinkActive="active_router_link"
     ></navbar-link>
+    <li></li>
   </ul>
 
   <div class="profile_content">

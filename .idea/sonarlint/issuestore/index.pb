@@ -11,8 +11,6 @@ u
 Efrontend/src/app/shared/components/not-found/not-found.component.html,4\7\474b13e39690981498bcf85662b9c3e03cf96cd1
 [
 +frontend/src/assets/images/check-circle.svg,e\c\ecdd86adf445d992cd294223944bd4d3b730f781
-V
-&frontend/src/app/app-routing.module.ts,5\d\5d5862f50ccdf906c38a4ad8b00a73afc92d5fe0
 Y
 )frontend/src/assets/images/arrow-left.svg,7\b\7b0a3060de22647b81402197879079c3016d602a
 E
@@ -37,12 +35,6 @@ G
 frontend/src/index.html,6\5\652e4713263d9cb68cfafc818ea01443781a72a8
 D
 frontend/src/main.ts,2\2\2265610032d84b945a9871e9f088f9516f382512
-ˆ
-Xfrontend/src/app/core/aside-navigation/components/navbar-link/navbar-link.component.scss,f\b\fb0870ab4633aa88bbe85a3eccae9d6df27c299e
-†
-Vfrontend/src/app/core/aside-navigation/components/navbar-link/navbar-link.component.ts,0\0\00f129f49ea5576e7995f5d6c1e6989a99bc26e1
-ˆ
-Xfrontend/src/app/core/aside-navigation/components/navbar-link/navbar-link.component.html,b\8\b80f558793b584fa0d8c6b5129b70bc2914ed726
 z
 Jbackend/src/main/java/com/github/dexluthor/backend/BackendApplication.java,8\a\8ac16a67423481a7108fafc6873094fe64e2be6a
 ‹
