@@ -4,6 +4,7 @@ import com.github.dexluthor.backend.adaptors.persistence.repos.TodoRepo;
 import com.github.dexluthor.backend.domain.Todo;
 import com.github.dexluthor.backend.exceptions.TodoNotFoundException;
 import com.github.dexluthor.backend.mapper.MongoTodoMapper;
+import com.github.dexluthor.backend.mapper.SeverityMapper;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -11,21 +12,22 @@ import reactor.core.publisher.Mono;
 import java.util.UUID;
 
 @Service
-public record TodoServiceImpl(TodoRepo repo, MongoTodoMapper mapper) implements ITodoService {
+public record TodoServiceImpl(TodoRepo repo, MongoTodoMapper todoMapper,
+                              SeverityMapper severityMapper) implements ITodoService {
 
     @Override
     public Flux<Todo> findAll() {
         return repo.findAll()
-                .map(mapper::toDomain);
+                .map(todoMapper::toDomain);
     }
 
     @Override
     public Mono<Todo> save(final Todo todo) {
         todo.setPublicId(UUID.randomUUID());
         return Mono.just(todo)
-                .map(mapper::fromDomain)
+                .map(todoMapper::fromDomain)
                 .flatMap(repo::save)
-                .map(mapper::toDomain);
+                .map(todoMapper::toDomain);
     }
 
     @Override
@@ -38,7 +40,7 @@ public record TodoServiceImpl(TodoRepo repo, MongoTodoMapper mapper) implements 
     public Mono<Todo> findById(final UUID publicId) {
         return repo.findByPublicId(publicId)
                 .switchIfEmpty(Mono.error(new TodoNotFoundException(publicId)))
-                .map(mapper::toDomain);
+                .map(todoMapper::toDomain);
     }
 
     @Override
@@ -48,10 +50,12 @@ public record TodoServiceImpl(TodoRepo repo, MongoTodoMapper mapper) implements 
                 .map(entity -> {
                     entity.setDone(todo.isDone());
                     entity.setTask(todo.getTask());
+                    entity.setSeverity(severityMapper.toEntity(todo.getSeverity()));
+                    entity.setDueDate(todo.getDueDate());
                     return entity;
                 })
                 .flatMap(repo::save)
-                .map(mapper::toDomain);
+                .map(todoMapper::toDomain);
     }
 
 }

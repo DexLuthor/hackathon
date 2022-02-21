@@ -1,4 +1,4 @@
-<div (click)="onClick()" class="todo_container">
+<div class="todo_container">
   <input
     [(ngModel)]="task"
     class="todo_task_input"
@@ -7,13 +7,7 @@
   >
   <div class="deadline_severity">
     <div class="deadline">
-      <!--      <input type="datetime-local">-->
-      <img
-        (click)="onCalendarClick()"
-        alt="calendar"
-        class="deadline_calendar"
-        src="assets/images/calendar-1.svg"
-      >
+      <input [(ngModel)]="dueDate" type="datetime-local">
     </div>
     <div class="severity">
       <img

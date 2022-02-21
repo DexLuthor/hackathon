@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 // todo wiring with ObjectId
@@ -15,4 +16,5 @@ public class Todo {
     private String task;
     private boolean isDone;
     private Severity severity;
+    private LocalDateTime dueDate;
 }

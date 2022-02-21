@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TodoControllerTest {
     public static final String BASE_URL = "/api/v1/todo";
-    private final Todo todo = new Todo(UUID.randomUUID(), "Finish the project", false, Severity.LOW);
+    private final Todo todo = new Todo(UUID.randomUUID(), "Finish the project", false, Severity.LOW, LocalDateTime.now());
 
     @Autowired
     private WebTestClient webClient;
@@ -89,7 +90,7 @@ class TodoControllerTest {
     @Test
     void save() {
         //given
-        final Todo todoToSave = new Todo(null, "Finish the project", false, Severity.LOW);
+        final Todo todoToSave = new Todo(null, "Finish the project", false, Severity.LOW, LocalDateTime.now());
 
         //when
         final WebTestClient.ResponseSpec resp = webClient
@@ -133,7 +134,7 @@ class TodoControllerTest {
         insertData().doOnSuccess(savedTodo -> {
             //given
             UUID publicIdToDelete = savedTodo.getPublicId();
-            Todo updatedTodo = new Todo(publicIdToDelete, "You make a slogan, call it real.", true, Severity.LOW);
+            Todo updatedTodo = new Todo(publicIdToDelete, "You make a slogan, call it real.", true, Severity.LOW, LocalDateTime.now());
 
             //when
             final WebTestClient.ResponseSpec resp = webClient

@@ -18,6 +18,7 @@ import {MaterialModule} from "./material.module";
 import {AddTodoComponent} from './pages/todo/components/add-todo/add-todo.component';
 import {FormsModule} from "@angular/forms";
 import {SettingsModule} from "./pages/settings/settings.module";
+import {DateDiffPipe} from './shared/pipes/date-diff.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {SettingsModule} from "./pages/settings/settings.module";
     TodoListComponent,
     NavbarLinkComponent,
     TodoBottomSheetComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    DateDiffPipe
   ],
   imports: [
     BrowserModule,

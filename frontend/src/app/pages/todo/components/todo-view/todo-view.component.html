@@ -6,7 +6,7 @@
   <span class="todo_container__task">{{ todo.task }}</span>
   <div class="deadline_severity">
     <div class="deadline">
-      <span class="deadline_calendar"> Lorem ipsum dolor.</span>
+      <span class="deadline_calendar">{{todo.dueDate | dateDiff}}</span>
     </div>
     <div class="severity">
       <img [src]="resolveSeverityIcon()" alt="severity">

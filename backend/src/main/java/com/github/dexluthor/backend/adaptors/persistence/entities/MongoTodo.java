@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Document(collection = "todo")
@@ -19,4 +20,5 @@ public final class MongoTodo {
     private String task;
     private boolean isDone;
     private Severity severity;
+    private LocalDateTime dueDate;
 }

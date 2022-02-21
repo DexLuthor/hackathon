@@ -55,7 +55,8 @@ export class TodoListComponent implements OnInit, OnDestroy {
       data: {todo}
     });
 
-    bottomSheetRef.afterDismissed().subscribe(result => {
+    bottomSheetRef.afterDismissed().subscribe((result: TodoModel) => {
+      console.log(result);
       if (result) {
         this.todoService.update(result);
       }

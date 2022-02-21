@@ -18,7 +18,6 @@ export class TodoViewComponent {
   }
 
   resolveSeverityIcon(): string {
-    console.log(String(this.todo?.severity))
     switch (String(this.todo?.severity)) {
       case "LOW":
         return "assets/images/one-chevron-up.svg";

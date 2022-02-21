@@ -1,39 +1,52 @@
-import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Output} from '@angular/core';
 import {TodoModel} from "../../../../shared/models/todo.model";
 import {SeverityEnum} from "../../../../shared/enums/severity.enum";
+import {SnackBarService} from "../../../../shared/services/snack-bar.service";
 
 @Component({
   selector: 'add-todo',
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.scss']
 })
-export class AddTodoComponent implements OnInit {
+export class AddTodoComponent {
 
   activeSeverity: SeverityEnum = SeverityEnum.LOW
   task = "";
+  dueDate = '';
   @Output() private readonly onAddTodo = new EventEmitter<TodoModel>()
 
-  ngOnInit(): void {
-  }
-
-  onClick() {
-
-  }
-
-  onCheckClicked($event: MouseEvent) {
+  constructor(private snackBarService: SnackBarService) {
 
   }
 
   @HostListener('window:keyup.enter')
   pressEnter(): void {
+    const dueDate = new Date(this.dueDate);
+    if (!this.isInputValid(dueDate)) {
+      return;
+    }
+
     this.onAddTodo.emit({
       task: this.task,
       severity: this.activeSeverity,
+      dueDate: dueDate,
       done: false
     });
 
     this.task = "";
     this.activeSeverity = SeverityEnum.LOW;
+    this.dueDate = new Date().toISOString().slice(0, 16)
+  }
+
+  isInputValid(dueDate: Date): boolean {
+    if (this.task.length < 1) {
+      this.snackBarService.openSnackBar("2Do task must be longer");
+      return false;
+    } else if (dueDate < new Date()) {
+      this.snackBarService.openSnackBar("Due date must be in the future");
+      return false;
+    }
+    return true;
   }
 
   onSeverityIconClick(id: number): void {
@@ -54,7 +67,4 @@ export class AddTodoComponent implements OnInit {
     return false;
   }
 
-  onCalendarClick(): void {
-
-  }
 }
