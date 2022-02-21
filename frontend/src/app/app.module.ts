@@ -20,6 +20,7 @@ import {FormsModule} from "@angular/forms";
 import {SettingsModule} from "./pages/settings/settings.module";
 import {DateDiffPipe} from './shared/pipes/date-diff.pipe';
 import {ThreedotSlicePipe} from './shared/pipes/threedot-slice.pipe';
+import {CapitalizePipe} from './shared/pipes/capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {ThreedotSlicePipe} from './shared/pipes/threedot-slice.pipe';
     TodoBottomSheetComponent,
     AddTodoComponent,
     DateDiffPipe,
-    ThreedotSlicePipe
+    ThreedotSlicePipe,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

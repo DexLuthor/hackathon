@@ -33,9 +33,9 @@ export class AddTodoComponent {
       done: false
     });
 
-    this.task = "";
+    this.task = '';
     this.activeSeverity = SeverityEnum.LOW;
-    this.dueDate = new Date().toISOString().slice(0, 16)
+    this.dueDate = '';
   }
 
   isInputValid(dueDate: Date): boolean {
