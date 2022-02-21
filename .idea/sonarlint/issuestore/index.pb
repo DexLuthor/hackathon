@@ -13,12 +13,8 @@ E
 frontend/angular.json,b\3\b3cec7597a1642acb78a85b8cc8b64586afe00fc
 E
 frontend/package.json,3\7\37083060967a471c011a16651e22bdc2ade41759
-V
-&frontend/src/app/shared/variables.scss,a\f\af4de56c14fce969f69f514299cc6407346f78ad
 e
 5frontend/src/app/shared/services/snack-bar.service.ts,3\5\35f939fa2e7a65c9893cef2d9241ab1096b1e224
-X
-(frontend/src/environments/environment.ts,d\a\da33d3ec1615fbf7a58ab3c9ff543d4bec53c056
 ™
 ibackend/src/main/java/com/github/dexluthor/backend/adaptors/rest/middleware/AbstractExceptionHandler.java,d\d\dd1d8d32d6fa0a5730981c7abfe975124ab6c895
 ‘

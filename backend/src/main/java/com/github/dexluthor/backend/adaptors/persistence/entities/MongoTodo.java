@@ -1,5 +1,6 @@
 package com.github.dexluthor.backend.adaptors.persistence.entities;
 
+import com.github.dexluthor.backend.adaptors.persistence.values.Severity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,5 +18,5 @@ public final class MongoTodo {
     private UUID publicId;
     private String task;
     private boolean isDone;
-
+    private Severity severity;
 }

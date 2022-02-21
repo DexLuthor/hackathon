@@ -1,7 +1,7 @@
 <add-todo (onAddTodo)="onAddTodo($event)" class="add-todo"></add-todo>
 
 <todo-view
-  (onChecked)="onChecked(todo, $event)"
+  (onComplete)="onChecked(todo, $event)"
   (onDelete)="onDelete(todo.publicId!)"
   (onEdit)="onEdit(todo)"
   *ngFor="let todo of todos"

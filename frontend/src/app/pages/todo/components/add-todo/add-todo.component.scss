@@ -53,11 +53,10 @@
   height: 20px;
   display: inline-block;
   cursor: pointer;
-  filter: invert(50%);
 }
 
 .severity img.active {
-  filter: none;
+  width: 30px;
+  height: 30px;
 }
-
 

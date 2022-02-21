@@ -13,7 +13,6 @@
   margin: 15px;
   padding: 15px;
   color: white;
-
   cursor: pointer;
 }
 
@@ -22,45 +21,25 @@
   box-shadow: 1px 1px 10px #888888;
 }
 
-.check_task_container {
-  display: flex;
-  align-items: center;
-}
-
-.check_btn {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #bdc3c7;
-  margin-right: 15px;
-  background-color: white;
-}
-
 .todo_container__task {
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: capitalize;
-  //text-shadow: 0 2px 4px rgb(71 97 206 / 36%);
-  top: 4px;
-
-
   color: #fff;
-  text-shadow: 0 0 4px #fff,
-  0 0 11px #fff,
-  0 0 19px #fff,
-  0 0 40px #0fa,
-  0 0 80px #0fa,
-  0 0 90px #0fa,
-  0 0 100px #0fa,
-  0 0 150px #0fa;
+
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-shadow: 0 2px 4px rgb(71 97 206 / 36%);
+  top: 4px;
+  opacity: 1;
 }
 
 .deadline_severity {
   display: flex;
 }
 
-.check_btn.done {
-  background-color: green;
+.todo_container.done {
+  background-color: #55efc4;
+  opacity: .4;
+  padding: 5px 15px;
 }
 
 .todo_task_input {

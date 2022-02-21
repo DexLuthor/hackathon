@@ -21,4 +21,4 @@
 
 1. [ ] WebSocket notifications(+ chain of responsibility)
 2. [ ] Horizontal scaling thanks to distributed user session management with redis
-3. [ ] 
+3. [ ] music section(japaneese trap)

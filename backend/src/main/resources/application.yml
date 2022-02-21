@@ -1,11 +1,10 @@
 # todo hide passwords
-# todo ssl
 server:
-  port: 8080
-  #  ssl:
-  #    key-store: classpath:hackaton.p12
-  #    key-store-password: HheHUvXF8kBb
-  #    keyStoreType: PKCS12
+  port: 8443
+  ssl:
+    key-store: classpath:hackaton.p12
+    key-store-password: HheHUvXF8kBb
+    keyStoreType: PKCS12
   error:
     include-stacktrace: never
     whitelabel:

@@ -11,7 +11,6 @@ export class BackgroundGalleryModalComponent {
   readonly images = [
     "assets/images/bg/astronaut.jpg",
     "assets/images/bg/circle.jpg",
-    "assets/images/bg/dear.jpg",
     "assets/images/bg/megapolis.jpg",
     "assets/images/bg/moon.jpg",
     "assets/images/bg/skyscrappers.jpg",

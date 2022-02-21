@@ -14,5 +14,5 @@ public class Todo {
     private UUID publicId;
     private String task;
     private boolean isDone;
-
+    private Severity severity;
 }

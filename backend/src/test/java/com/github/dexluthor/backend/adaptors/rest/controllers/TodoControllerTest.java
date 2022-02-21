@@ -1,6 +1,7 @@
 package com.github.dexluthor.backend.adaptors.rest.controllers;
 
 import com.github.dexluthor.backend.adaptors.persistence.repos.TodoRepo;
+import com.github.dexluthor.backend.domain.Severity;
 import com.github.dexluthor.backend.domain.Todo;
 import com.github.dexluthor.backend.services.ITodoService;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TodoControllerTest {
     public static final String BASE_URL = "/api/v1/todo";
-    private final Todo todo = new Todo(UUID.randomUUID(), "Finish the project", false);
+    private final Todo todo = new Todo(UUID.randomUUID(), "Finish the project", false, Severity.LOW);
 
     @Autowired
     private WebTestClient webClient;
@@ -88,7 +89,7 @@ class TodoControllerTest {
     @Test
     void save() {
         //given
-        final Todo todoToSave = new Todo(null, "Finish the project", false);
+        final Todo todoToSave = new Todo(null, "Finish the project", false, Severity.LOW);
 
         //when
         final WebTestClient.ResponseSpec resp = webClient
@@ -132,7 +133,7 @@ class TodoControllerTest {
         insertData().doOnSuccess(savedTodo -> {
             //given
             UUID publicIdToDelete = savedTodo.getPublicId();
-            Todo updatedTodo = new Todo(publicIdToDelete, "You make a slogan, call it real.", true);
+            Todo updatedTodo = new Todo(publicIdToDelete, "You make a slogan, call it real.", true, Severity.LOW);
 
             //when
             final WebTestClient.ResponseSpec resp = webClient
