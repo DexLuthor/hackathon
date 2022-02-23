@@ -18,7 +18,7 @@ public class TodoController {
 
     @GetMapping("all")
     Flux<Todo> findAll() {
-        return todoService.findAll();
+        return todoService.findAll();//todo when list is empty  empty result will be returned
     }
 
     @GetMapping("{publicId}")

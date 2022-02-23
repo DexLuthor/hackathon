@@ -1,7 +1,43 @@
-.severity {
+.row1 {
   display: flex;
+  margin-bottom: 15px;
 }
 
+.row1 input {
+  width: 100%;
+}
+
+input {
+  outline: none;
+}
+
+.severity {
+  display: flex;
+  margin-left: 10px;
+}
+
+.row2 {
+  margin-bottom: 10px;
+}
+
+.row2 input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+p {
+  text-align: center;
+}
+
+.subtask {
+  padding: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.subtask:last-child {
+  margin-bottom: 0;
+}
 
 .severity .severity-icon {
   width: 30px;
@@ -11,8 +47,12 @@
 }
 
 .active {
-  width: 50px;
-  height: 50px;
+  border: 1px white solid;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe;
 }
 
 .bottom_buttons {
@@ -21,3 +61,10 @@
   justify-content: right;
 }
 
+.tag {
+  margin-right: 10px;
+}
+
+.tag:last-child {
+  margin-right: 0;
+}

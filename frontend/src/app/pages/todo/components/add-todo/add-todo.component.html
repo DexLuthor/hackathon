@@ -1,10 +1,29 @@
 <div class="todo_container">
   <input
-    [(ngModel)]="task"
     class="todo_task_input"
+    [(ngModel)]="task"
     placeholder="Add 2Do..."
     type="text"
   >
+  <!--  <span>-->
+  <!--    <select class="dropdown" [(ngModel)]="selectedLink" (ngModelChange)="link($event)">-->
+  <!--&lt;!&ndash;      <option [ngValue]="null">Link to another todo (optional)</option>&ndash;&gt;-->
+  <!--&lt;!&ndash;      <option&ndash;&gt;-->
+  <!--&lt;!&ndash;        *ngFor="let todo of todos"&ndash;&gt;-->
+  <!--&lt;!&ndash;        [ngValue]="todo"&ndash;&gt;-->
+  <!--&lt;!&ndash;      >{{todo.task}}</option>&ndash;&gt;-->
+  <!--    </select>-->
+  <!--  </span>-->
+  <span>
+    <select (ngModelChange)="link($event)" [(ngModel)]="selectedLink" class="dropdown">
+      <option [ngValue]="null">Link to another todo (optional)</option>
+      <option
+        *ngFor="let todo of todos"
+        [ngValue]="todo"
+      >{{todo.task}}</option>
+    </select>
+  </span>
+
   <div class="deadline_severity">
     <div class="deadline">
       <input [(ngModel)]="dueDate" type="datetime-local">

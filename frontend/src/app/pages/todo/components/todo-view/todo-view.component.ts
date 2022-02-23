@@ -9,6 +9,7 @@ import {TodoModel} from "../../../../shared/models/todo.model";
 export class TodoViewComponent {
   @Input() todo?: TodoModel
   @Input() checkSound?: HTMLAudioElement
+  expanded = false
   @Output() private readonly onComplete = new EventEmitter<boolean>();
   @Output() private readonly onDelete = new EventEmitter();
   @Output() private readonly onEdit = new EventEmitter();
@@ -45,6 +46,19 @@ export class TodoViewComponent {
 
     if (isDone) {
       this.checkSound?.play().then();//todo use shorter sound this current longs 2s
+    }
+  }
+
+  onShrinkExpandClick(e: MouseEvent) {
+    e.stopPropagation();
+    this.expanded = !this.expanded;
+  }
+
+  resolveShrinkExpandIcon() {
+    if (this.expanded) {
+      return "assets/images/arrow-up-circle.svg";//todo remove the second svg and rotate the first on click
+    } else {
+      return "assets/images/arrow-down-circle.svg";
     }
   }
 }

@@ -31,6 +31,7 @@ $frontend-theme: mat.define-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($frontend-theme);
+@import "src/app/shared/variables";
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -76,4 +77,9 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bottom-sheet {
+  background-color: $primary;
+  padding: 15px !important;
 }

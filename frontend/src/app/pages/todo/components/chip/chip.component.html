@@ -1,0 +1,20 @@
+<div
+  (click)="onChipClicked()"
+  *ngIf="mode==='view';else adding"
+  [ngClass]="{'clicked': active}"
+  class="chip_container"
+>
+  <ng-content></ng-content>
+</div>
+<ng-template #adding>
+  <div class="chip_container">
+    <input
+      [(ngModel)]="chipName"
+      class="new_tag_input"
+      maxlength="10"
+      placeholder="New tag"
+      type="text"
+    >
+    <mat-icon (click)="addChip()">add</mat-icon>
+  </div>
+</ng-template>

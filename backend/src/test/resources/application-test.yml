@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+    min-response-size: 512
+    mime-types: application/json
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: todo
+      authentication-database: admin
+      password: root
+      username: root
+      repositories:
+        type: reactive
+  main:
+    banner-mode: off
+  jackson:
+    time-zone: Europe/Bratislava
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: "%clr(%-5p) %clr{faint} %clr(---){faint} %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n"
+#  file:
+#    name: logs/backend.log
+
+debug: false

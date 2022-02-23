@@ -1,0 +1,45 @@
+.chip_container {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 25px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip_container.clicked {
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe;
+  text-shadow: 0 0 4px #fff;
+}
+
+.new_tag_input {
+  border: none;
+  width: 100px;
+  margin-left: 10px;
+  outline: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.new_tag_input::placeholder {
+  color: white;
+}
+
+.new_tag_input:-ms-input-placeholder {
+  color: white;
+}
+
+.new_tag_input::-ms-input-placeholder {
+  color: white;
+}

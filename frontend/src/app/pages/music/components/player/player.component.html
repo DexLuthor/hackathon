@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="fog">
+    <div class="fog-1"></div>
+    <div class="fog-2"></div>
+  </div>
+  <div class="player">
+    <div class="image_wrapper">
+      <div class="image_left">
+        <div class="image"></div>
+      </div>
+      <div class="image_right">
+        <div class="image"></div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button (click)="prev()" class="previous">
+        <mat-icon>fast_rewind</mat-icon>
+      </button>
+      <button (click)="startStop()" class="playstop">
+        <mat-icon *ngIf="audio.paused;else playing">play_arrow</mat-icon>
+        <ng-template #playing>
+          <mat-icon>pause</mat-icon>
+        </ng-template>
+      </button>
+      <button (click)="next()" class="next">
+        <mat-icon>fast_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
