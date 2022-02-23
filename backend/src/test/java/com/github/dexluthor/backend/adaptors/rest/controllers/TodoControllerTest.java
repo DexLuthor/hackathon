@@ -11,20 +11,25 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
 
 @Slf4j
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@ActiveProfiles("test")
+@PropertySource("classpath:application-test.yml")
 class TodoControllerTest {
     public static final String BASE_URL = "/api/v1/todo";
-    private final Todo todo = new Todo(UUID.randomUUID(), "Finish the project", false, Severity.LOW, LocalDateTime.now());
+    private final Todo todo = new Todo(UUID.randomUUID(), "Finish the project", false, Severity.LOW, LocalDateTime.now(), List.of(), List.of());
 
     @Autowired
     private WebTestClient webClient;
@@ -90,7 +95,7 @@ class TodoControllerTest {
     @Test
     void save() {
         //given
-        final Todo todoToSave = new Todo(null, "Finish the project", false, Severity.LOW, LocalDateTime.now());
+        final Todo todoToSave = new Todo(null, "Finish the project", false, Severity.LOW, LocalDateTime.now(), List.of(), List.of());
 
         //when
         final WebTestClient.ResponseSpec resp = webClient
@@ -134,7 +139,7 @@ class TodoControllerTest {
         insertData().doOnSuccess(savedTodo -> {
             //given
             UUID publicIdToDelete = savedTodo.getPublicId();
-            Todo updatedTodo = new Todo(publicIdToDelete, "You make a slogan, call it real.", true, Severity.LOW, LocalDateTime.now());
+            Todo updatedTodo = new Todo(publicIdToDelete, "You make a slogan, call it real.", true, Severity.LOW, LocalDateTime.now(), List.of(), List.of());
 
             //when
             final WebTestClient.ResponseSpec resp = webClient

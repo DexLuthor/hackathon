@@ -1,24 +1,30 @@
 @import "src/app/shared/variables";
 
 .todo_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  //display: flex;
+  //justify-content: space-between;
+  //align-items: center;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  margin: 15px;
   padding: 15px;
   color: white;
   cursor: pointer;
+  position: relative;
 }
 
 .todo_container:active {
   transform: translateY(5px) translateX(5px);
   box-shadow: 1px 1px 10px #888888;
+}
+
+.main_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .todo_container__task {
@@ -33,6 +39,10 @@
 
 .deadline_severity {
   display: flex;
+}
+
+.subtodo {
+  display: block;
 }
 
 .todo_container.done {
@@ -75,4 +85,23 @@
 
 .delete_btn {
   color: red;
+}
+
+.shrink_expand_todo {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 0;
+  left: 50%;
+  transform: translateY(50%);
+  animation: bounce alternate ease infinite .75s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(45%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
 }

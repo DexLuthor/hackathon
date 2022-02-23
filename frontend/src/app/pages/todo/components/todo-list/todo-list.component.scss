@@ -1,5 +1,5 @@
 .add-todo {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   display: block;
 }
 
@@ -10,4 +10,17 @@
 
 .todo-view:last-child {
   margin-bottom: 0;
+}
+
+.chips {
+  display: block;
+  margin-bottom: 10px;
+
+  chip {
+    margin-right: 10px;
+  }
+
+  chip:last-child {
+    margin-right: 0;
+  }
 }

@@ -10,6 +10,7 @@ export class AsideNavigationComponent implements OnInit {
   openSidebar = true
   navLinks: NavLinkModel[] = [
     {icon: 'check', title: 'todos', routerLink: 'main'},
+    {icon: 'headphones', title: 'Vibe out', routerLink: 'music'},
     {icon: 'settings', title: 'settings', routerLink: 'settings'},
   ];
 

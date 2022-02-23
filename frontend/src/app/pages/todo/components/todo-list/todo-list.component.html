@@ -1,5 +1,19 @@
-<add-todo (onAddTodo)="onAddTodo($event)" class="add-todo"></add-todo>
-
+<add-todo
+  (onAddTodo)="onAddTodo($event)"
+  [todos]="todos"
+  class="add-todo"
+></add-todo>
+<div class="chips">
+  <chip
+    (onClick)="onChipClicked(tag, $event)"
+    *ngFor="let tag of tags"
+    [active]="tag.active"
+  >{{tag.tag}}</chip>
+  <chip
+    (onChipAdded)="onChipAdded($event)"
+    mode="add"
+  ></chip>
+</div>
 <todo-view
   (onComplete)="onChecked(todo, $event)"
   (onDelete)="onDelete(todo.publicId!)"

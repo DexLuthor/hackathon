@@ -1,14 +1,35 @@
-<input [(ngModel)]="task" placeholder="Rewrite the law" type="text">
-<div class="severity">
-  <img [ngStyle]="{'active':edittingTodo!.severity===0}" alt="low" class="severity-icon"
-       src="assets/images/one-chevron-up.svg">
-  <img [ngStyle]="{'active':edittingTodo!.severity===1}" alt="middle" class="severity-icon"
-       src="assets/images/two-chevrons-up.svg">
-  <img [ngStyle]="{'active':edittingTodo!.severity===2}" alt="high" class="severity-icon"
-       src="assets/images/three-chevrons-up.svg">
+<div class="row1">
+  <input [(ngModel)]="task" placeholder="Rewrite the law" type="text">
+  <div class="severity">
+    <img (click)="chooseSeverity(0)" [ngClass]="{'active':severity===0}" alt="low" class="severity-icon"
+         src="assets/images/one-chevron-up.svg">
+    <img (click)="chooseSeverity(1)" [ngClass]="{'active':severity===1}" alt="middle" class="severity-icon"
+         src="assets/images/two-chevrons-up.svg">
+    <img (click)="chooseSeverity(2)" [ngClass]="{'active':severity===2}" alt="high" class="severity-icon"
+         src="assets/images/three-chevrons-up.svg">
+  </div>
 </div>
-<input [(ngModel)]="dueDate" type="datetime-local">
+<div class="row2">
+  <input [(ngModel)]="dueDate" type="datetime-local">
+</div>
+<ng-container *ngIf="(edittingTodo!.subtodos?.length ?? 0) > 0">
+  <p>SUBTASKS</p>
+  <input
+    *ngFor="let subtask of edittingTodo!.subtodos ?? []"
+    [value]="subtask.task"
+    class="subtask"
+    type="text"
+  >
+</ng-container>
+
+<chip
+  (onClick)="onTagClicked(tag, $event)"
+  *ngFor="let tag of availableTags"
+  [active]="isTodoTaggedWith(tag)"
+  class="tag"
+>{{tag.tag}}</chip>
+
 <div class="bottom_buttons">
-  <button (click)="cancel()">Cancel</button>
-  <button (click)="save()">Save</button>
+  <button (click)="cancel()" mat-raised-button>Cancel</button>
+  <button (click)="save()" mat-raised-button>Save</button>
 </div>

@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from "./shared/components/not-found/not-found.component";
-import {ShowcaseComponent} from "./pages/showcase/showcase.component";
+import {TodoListComponent} from "./pages/todo/components/todo-list/todo-list.component";
 
 const routes: Routes = [
   {
@@ -11,11 +11,15 @@ const routes: Routes = [
   },
   {
     path: "main",
-    component: ShowcaseComponent
+    component: TodoListComponent
   },
   {
     path: "settings",
     loadChildren: () => import("./pages/settings/settings.module").then(m => m.SettingsModule)
+  },
+  {
+    path: "music",
+    loadChildren: () => import("./pages/music/music.module").then(m => m.MusicModule)
   },
   {
     path: "**",

@@ -6,7 +6,6 @@ import {AppComponent} from './app.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AsideNavigationComponent} from './core/aside-navigation/components/navbar/aside-navigation.component';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
-import {ShowcaseComponent} from './pages/showcase/showcase.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TodoViewComponent} from './pages/todo/components/todo-view/todo-view.component';
 import {TodoListComponent} from './pages/todo/components/todo-list/todo-list.component';
@@ -21,13 +20,14 @@ import {SettingsModule} from "./pages/settings/settings.module";
 import {DateDiffPipe} from './shared/pipes/date-diff.pipe';
 import {ThreedotSlicePipe} from './shared/pipes/threedot-slice.pipe';
 import {CapitalizePipe} from './shared/pipes/capitalize.pipe';
+import {MusicModule} from "./pages/music/music.module";
+import {ChipComponent} from './pages/todo/components/chip/chip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AsideNavigationComponent,
     NotFoundComponent,
-    ShowcaseComponent,
     TodoViewComponent,
     TodoListComponent,
     NavbarLinkComponent,
@@ -35,7 +35,8 @@ import {CapitalizePipe} from './shared/pipes/capitalize.pipe';
     AddTodoComponent,
     DateDiffPipe,
     ThreedotSlicePipe,
-    CapitalizePipe
+    CapitalizePipe,
+    ChipComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +45,8 @@ import {CapitalizePipe} from './shared/pipes/capitalize.pipe';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    SettingsModule
+    SettingsModule,
+    MusicModule
   ],
   providers: [
     SnackBarService,
