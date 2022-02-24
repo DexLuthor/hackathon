@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: VismaHackathonBackend
-          path: '${{ working.directory }}/target/*.jar'
+          path: 'backend/target/*.jar'
           if-no-files-found: error
 
   deploy:
