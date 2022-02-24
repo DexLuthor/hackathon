@@ -21,12 +21,8 @@ Ffrontend/src/app/shared/interceptors/http-error-interceptor.service.ts,9\5\952
 Ubackend/src/main/java/com/github/dexluthor/backend/adaptors/rest/security/Config.java,9\5\955fd725b6a907a66c3d8fe8556165432fa9a719
 D
 frontend/src/main.ts,2\2\2265610032d84b945a9871e9f088f9516f382512
-z
-Jbackend/src/main/java/com/github/dexluthor/backend/BackendApplication.java,8\a\8ac16a67423481a7108fafc6873094fe64e2be6a
 ˆ
 Xbackend/src/main/java/com/github/dexluthor/backend/exceptions/TodoNotFoundException.java,e\9\e931857061145ff94e4193d2bb022a61db8a0d6d
-?
-backend/pom.xml,f\9\f9590cd73598b6f2427c8b1327d922c50d1dc504
 F
 frontend/karma.conf.js,d\b\dbeb4de1190cf280b15f9356104e85f7713244cb
 7

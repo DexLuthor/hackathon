@@ -9,6 +9,7 @@ import com.github.dexluthor.backend.exceptions.TodoNotFoundException;
 import com.github.dexluthor.backend.mapper.MongoTodoMapper;
 import com.github.dexluthor.backend.mapper.SeverityMapper;
 import com.github.dexluthor.backend.mapper.TagMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -16,14 +17,16 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 import java.util.UUID;
 
+import static java.util.stream.Collectors.toList;
+
+@RequiredArgsConstructor
 @Service
-public record TodoServiceImpl(
-        TodoRepo todoRepo,
-        MongoTodoMapper todoMapper,
-        SeverityMapper severityMapper,
-        TagMapper tagMapper,
-        TagRepo tagRepo
-) implements ITodoService {
+public class TodoServiceImpl implements ITodoService {
+    private final TodoRepo todoRepo;
+    private final MongoTodoMapper todoMapper;
+    private final SeverityMapper severityMapper;
+    private final TagMapper tagMapper;
+    private final TagRepo tagRepo;
 
     @Override
     public Flux<Todo> findAll() {
@@ -36,7 +39,7 @@ public record TodoServiceImpl(
                         final List<String> activeTags = tags.stream()
                                 .filter(MongoTag::isActive)
                                 .map(MongoTag::getTag)
-                                .toList();
+                                .collect(toList());
                         return todoRepo.findByTags(activeTags);
                     }
                 })
@@ -88,7 +91,7 @@ public record TodoServiceImpl(
         oldTodo.setSeverity(severityMapper.toEntity(newTodo.getSeverity()));
         oldTodo.setDueDate(newTodo.getDueDate());
         oldTodo.setSubtodos(newTodo.getSubtodos());
-        oldTodo.setTags(newTodo.getTags().stream().map(tagMapper::fromDomain).toList());
+        oldTodo.setTags(newTodo.getTags().stream().map(tagMapper::fromDomain).collect(toList()));
         return oldTodo;
     }
 
