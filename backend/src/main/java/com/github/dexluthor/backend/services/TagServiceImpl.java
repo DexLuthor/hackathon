@@ -4,14 +4,19 @@ import com.github.dexluthor.backend.adaptors.persistence.repos.TagRepo;
 import com.github.dexluthor.backend.domain.Tag;
 import com.github.dexluthor.backend.exceptions.TagNotFoundException;
 import com.github.dexluthor.backend.mapper.TagMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
-public record TagServiceImpl(TagRepo repo, TagMapper mapper) implements ITagService {
+public class TagServiceImpl implements ITagService {
+
+    private final TagRepo repo;
+    private final TagMapper mapper;
 
     @Override
     public Flux<Tag> findAll() {
