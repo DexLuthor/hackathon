@@ -1,0 +1,43 @@
+# todo hide passwords
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:hackaton.p12
+    key-store-password: HheHUvXF8kBb
+    keyStoreType: PKCS12
+  error:
+    include-stacktrace: never
+    whitelabel:
+      enabled: false
+  compression:
+    enabled: true
+    min-response-size: 512
+    mime-types: application/json
+spring:
+  profiles:
+    active: @spring.profiles.active@
+  data:
+    mongodb:
+      uri: mongodb://mongo-account-name:sGxCMP5D7usvD4rOXSQ6nnQxihETMtCh48JzcKUYD3TbbmYUlmCgV30T9N9t56CVBsd5yfr4iwR7VQhpdTA6ag==@mongo-account-name.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@mongo-account-name@
+      database: todo
+      authentication-database: admin
+      repositories:
+        type: reactive
+  main:
+    banner-mode: off
+  jackson:
+    time-zone: Europe/Bratislava
+springdoc:
+  swagger-ui:
+    path: /
+
+logging:
+  level:
+    root: info
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+  pattern:
+    console: "%clr(%-5p) %clr{faint} %clr(---){faint} %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n"
+#  file:
+#    name: logs/backend.log
+
+debug: false
