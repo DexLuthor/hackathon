@@ -14,8 +14,6 @@ server:
     min-response-size: 512
     mime-types: application/json
 spring:
-  profiles:
-    active: @spring.profiles.active@
   data:
     mongodb:
       uri: mongodb://mongo-account-name:sGxCMP5D7usvD4rOXSQ6nnQxihETMtCh48JzcKUYD3TbbmYUlmCgV30T9N9t56CVBsd5yfr4iwR7VQhpdTA6ag==@mongo-account-name.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@mongo-account-name@
