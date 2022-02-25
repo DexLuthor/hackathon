@@ -44,7 +44,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'HBack'
+          app-name: 'HBackend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_70e03e242209468ba262921b9a2df617 }}
           package: '*.jar'
