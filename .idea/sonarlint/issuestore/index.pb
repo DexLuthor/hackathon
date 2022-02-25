@@ -105,7 +105,3 @@ y
 Ifrontend/src/app/pages/todo/components/todo-view/todo-view.component.scss,9\9\990b2cccd180e429b0f67a8666cd46678b99a760
 ”
 dbackend/src/test/java/com/github/dexluthor/backend/adaptors/rest/controllers/TodoControllerTest.java,3\6\36b13d504cd6001d014da1b2309958439458b71d
-z
-Jbackend/src/main/java/com/github/dexluthor/backend/BackendApplication.java,8\a\8ac16a67423481a7108fafc6873094fe64e2be6a
-S
-#.github/workflows/frontend-cicd.yml,b\b\bb9fd8d2a24c3e94f91eebe904693c33a5b64956

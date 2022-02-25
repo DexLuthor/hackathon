@@ -3,8 +3,7 @@ name: Build and deploy JAR app to Azure Web App - Hbackend
 on:
   push:
     branches:
-      - ci
-  workflow_dispatch:
+      - master
 
 jobs:
   build:
