@@ -2,8 +2,6 @@ name: Build and deploy JAR app to Azure Web App - Hbackend
 
 on:
   push:
-    paths-ignore:
-      - "frontend"
     branches:
       - ci
   workflow_dispatch:
