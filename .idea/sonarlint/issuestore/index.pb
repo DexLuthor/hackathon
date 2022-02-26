@@ -75,8 +75,6 @@ kfrontend/src/app/pages/settings/components/background-gallery-modal/background-
 Mbackend/src/main/java/com/github/dexluthor/backend/mapper/SeverityMapper.java,9\8\9876f8fe46d93890da5f46b25b0aa573c5734650
 ‡
 Wfrontend/src/app/pages/todo/components/todo-bottom-sheet/todo-bottom-sheet.component.ts,c\e\ce27d40c021bb89a563ccf5fe9991fb9569f8534
-]
--frontend/src/environments/environment.prod.ts,3\8\3874bb97389dbd34816a3e21cdf49a3cd7c81998
 X
 (frontend/src/environments/environment.ts,d\a\da33d3ec1615fbf7a58ab3c9ff543d4bec53c056
 ‰
