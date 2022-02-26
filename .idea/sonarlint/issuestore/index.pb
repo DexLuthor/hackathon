@@ -6,8 +6,6 @@ B
 J
 frontend/package-lock.json,7\5\75b3b81cff849b08343553e269c3327a04ab22e0
 E
-frontend/angular.json,b\3\b3cec7597a1642acb78a85b8cc8b64586afe00fc
-E
 frontend/package.json,3\7\37083060967a471c011a16651e22bdc2ade41759
 e
 5frontend/src/app/shared/services/snack-bar.service.ts,3\5\35f939fa2e7a65c9893cef2d9241ab1096b1e224
@@ -41,8 +39,6 @@ d
 4frontend/src/app/shared/services/settings.service.ts,e\7\e734f58acd17f2de390db1f8e085e50bf2d477b2
 ›
 kfrontend/src/app/pages/settings/components/background-gallery-modal/background-gallery-modal.component.scss,a\e\aefe95e2e3d4cbfec061e128f56d755b2d385c93
-Q
-!frontend/src/app/app.component.ts,6\f\6fe80369fcb9c1803de2d722fbc3c7c29c0b58f1
 {
 Kfrontend/src/app/pages/settings/components/settings/settings.component.scss,9\4\94e2695fa0eaabd057dd733868dbb7588d7941a4
 {
