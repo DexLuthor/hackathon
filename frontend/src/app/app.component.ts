@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SettingsService} from "./shared/services/settings.service";
 import {Subscription} from "rxjs";
-import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,6 @@ import {environment} from "../environments/environment";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  env = environment
 
   bg: string;
   private subscription?: Subscription;
