@@ -30,6 +30,7 @@ export class TodoListComponent implements OnInit, OnDestroy {
     this.todoSubscription = this.todoService.todos$
       .subscribe(todos => {
         this.todos = todos;
+        console.log(todos)
       });
     this.tagSubscription = this.tagService.tags$
       .subscribe(tags => {
@@ -87,5 +88,9 @@ export class TodoListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.todoSubscription?.unsubscribe();
     this.tagSubscription?.unsubscribe();
+  }
+
+  onCheckSubtodo(todo: TodoModel) {
+    this.todoService.update(todo);
   }
 }

@@ -18,6 +18,7 @@
   (onComplete)="onChecked(todo, $event)"
   (onDelete)="onDelete(todo.publicId!)"
   (onEdit)="onEdit(todo)"
+  (onSubtodoCheck)="onCheckSubtodo(todo)"
   *ngFor="let todo of todos"
   [checkSound]="checkSound"
   [todo]="todo"

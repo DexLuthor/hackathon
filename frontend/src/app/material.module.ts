@@ -9,6 +9,7 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule} from "@angular/material/button";
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatBottomSheetModule,
     MatGridListModule,
     MatChipsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
   ],
   exports: [
     MatSidenavModule,
@@ -32,7 +34,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatBottomSheetModule,
     MatGridListModule,
     MatChipsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule {

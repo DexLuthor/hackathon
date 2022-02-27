@@ -105,3 +105,14 @@
     transform: translateY(50%);
   }
 }
+
+.subtodo_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subtodo__checkbox {
+  width: 15px;
+  height: 15px;
+}

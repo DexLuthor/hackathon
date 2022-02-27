@@ -86,6 +86,8 @@ public class TodoServiceImpl implements ITodoService {
     }
 
     private MongoTodo updateEntity(final MongoTodo oldTodo, final Todo newTodo) {
+        addIdsToNewSubtodos(newTodo);
+
         oldTodo.setDone(newTodo.isDone());
         oldTodo.setTask(newTodo.getTask());
         oldTodo.setSeverity(severityMapper.toEntity(newTodo.getSeverity()));
@@ -93,6 +95,18 @@ public class TodoServiceImpl implements ITodoService {
         oldTodo.setSubtodos(newTodo.getSubtodos());
         oldTodo.setTags(newTodo.getTags().stream().map(tagMapper::fromDomain).collect(toList()));
         return oldTodo;
+    }
+
+    private void addIdsToNewSubtodos(final Todo newTodo) {
+        if (newTodo.getSubtodos() == null) {
+            return;
+        }
+
+        for (final Todo subtodo : newTodo.getSubtodos()) {
+            if (subtodo.getPublicId() == null) {
+                subtodo.setPublicId(UUID.randomUUID());
+            }
+        }
     }
 
 }

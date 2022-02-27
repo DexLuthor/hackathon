@@ -3,38 +3,41 @@
      [ngClass]="{'done': isDone(), 'undone': !isDone()}"
      class="todo_container"
 >
-    <div class="main_row">
-        <span class="todo_container__task">{{todo.task | threedotSlice | capitalize}}</span>
-        <div class="deadline_severity">
-            <div class="deadline">
-                <span class="deadline_calendar">{{todo.dueDate | dateDiff}}</span>
-            </div>
-            <div class="severity">
-                <img [src]="resolveSeverityIcon()" alt="severity">
-            </div>
-        </div>
+  <div class="main_row">
+    <span class="todo_container__task">{{todo.task | threedotSlice | capitalize}}</span>
+    <div class="deadline_severity">
+      <div class="deadline">
+        <span class="deadline_calendar">{{todo.dueDate | dateDiff}}</span>
+      </div>
+      <div class="severity">
+        <img [src]="resolveSeverityIcon()" alt="severity">
+      </div>
     </div>
-    <div [ngStyle]="{'display': expanded ? 'block': 'none'}" class="subtodo">
-        <div *ngFor="let todo of todo.subtodos">
-            <input type="checkbox">{{todo.task}}
-        </div>
+  </div>
+  <div [ngStyle]="{'display': expanded ? 'block': 'none'}" class="subtodo">
+    <div *ngFor="let subtodo of todo.subtodos" class="subtodo_row">
+      <mat-checkbox
+        (change)="onSubtaskCheckChanged(subtodo, $event)"
+        (click)="onSubtaskCheckClicked($event)"
+        [checked]="subtodo.done">{{subtodo.task}}</mat-checkbox>
     </div>
-    <img (click)="onShrinkExpandClick($event)"
-         *ngIf="(todo!.subtodos?.length ?? 0) > 0"
-         [src]="resolveShrinkExpandIcon()"
-         alt="shrink_expand_todo"
-         class="shrink_expand_todo"
-    >
+  </div>
+  <img (click)="onShrinkExpandClick($event)"
+       *ngIf="(todo!.subtodos?.length ?? 0) > 0"
+       [src]="resolveShrinkExpandIcon()"
+       alt="shrink_expand_todo"
+       class="shrink_expand_todo"
+  >
 </div>
 <mat-menu #menu="matMenu" class="todo-view-menu" xPosition="before">
-    <button (click)="complete()" mat-menu-item>
+  <button (click)="complete()" mat-menu-item>
     <span *ngIf="todo!.done;else incomplete">
 <!--      todo render icon-->
       <mat-icon>cross</mat-icon>
       Uncheck
     </span>
-        <ng-template #incomplete>
-            <mat-icon>check</mat-icon>
+    <ng-template #incomplete>
+      <mat-icon>check</mat-icon>
       Complete
     </ng-template>
     <!--    {{todo!.done ? 'Uncheck' : 'Complete'}}-->

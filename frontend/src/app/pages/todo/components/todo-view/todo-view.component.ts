@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TodoModel} from "../../../../shared/models/todo.model";
+import {MatCheckboxChange} from "@angular/material/checkbox";
 
 @Component({
   selector: 'todo-view',
@@ -13,6 +14,7 @@ export class TodoViewComponent {
   @Output() private readonly onComplete = new EventEmitter<boolean>();
   @Output() private readonly onDelete = new EventEmitter();
   @Output() private readonly onEdit = new EventEmitter();
+  @Output() private readonly onSubtodoCheck = new EventEmitter<TodoModel>();
 
   isDone(): boolean {
     return this.todo?.done ?? false;
@@ -60,5 +62,24 @@ export class TodoViewComponent {
     } else {
       return "assets/images/arrow-down-circle.svg";
     }
+  }
+
+  onSubtaskCheckClicked($event: MouseEvent) {
+    $event.stopPropagation();
+  }
+
+  onSubtaskCheckChanged(todo: TodoModel, $event: MatCheckboxChange) {
+    const subtodos = [...this.todo?.subtodos!]
+    const clickedSubtodo = subtodos.find(subtodo => subtodo.publicId === todo.publicId);
+    if (clickedSubtodo) {
+      clickedSubtodo.done = $event.checked;
+    }
+
+    const newTodo: TodoModel = {
+      ...this.todo!,
+      subtodos
+    }
+
+    this.onSubtodoCheck.emit(newTodo)
   }
 }
