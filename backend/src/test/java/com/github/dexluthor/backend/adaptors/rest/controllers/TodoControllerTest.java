@@ -119,7 +119,7 @@ class TodoControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Delete returns NO CONTENT")
     void deleteReturnsNoContent() {
         insertData().doOnSuccess(savedTodo -> {
             //given
@@ -137,21 +137,19 @@ class TodoControllerTest {
     }
 
     @Test
-    @DisplayName("")
-    void delete() {
-        insertData().doOnSuccess(savedTodo -> {
-            //given
-            UUID publicIdToDelete = savedTodo.getPublicId();
+    @DisplayName("Delete returns NOT FOUND")
+    void deleteReturnsNotFound() {
+        //given
+        UUID publicIdToDelete = UUID.randomUUID();
 
-            //when
-            final WebTestClient.ResponseSpec resp = webClient
-                    .delete().uri(BASE_URL + "/" + publicIdToDelete)
-                    .exchange();
+        //when
+        final WebTestClient.ResponseSpec resp = webClient
+                .delete().uri(BASE_URL + "/" + publicIdToDelete)
+                .exchange();
 
-            //then
-            resp
-                    .expectStatus().isOk();
-        }).subscribe();
+        //then
+        resp
+                .expectStatus().isNotFound();
     }
 
     @Test
