@@ -57,8 +57,6 @@ w
 Gbackend/src/main/java/com/github/dexluthor/backend/domain/Severity.java,f\8\f849ddeaa19010f5fd63cc6084ebf6f609cb5b7f
 b
 2frontend/src/app/pages/settings/settings.module.ts,6\e\6edad77bec313d31478037d69424e6c3b6cbe4a8
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 ™
 ifrontend/src/app/pages/settings/components/background-gallery-modal/background-gallery-modal.component.ts,6\f\6fefdbd2184c01cf46512035c7888fa624a86a25
 ›

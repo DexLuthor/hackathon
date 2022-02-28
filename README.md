@@ -1,4 +1,4 @@
-# Technical Requirements
+# Technical Requirements & Todo
 
 ### Mandatory
 
@@ -17,8 +17,9 @@
 6. [ ] pipeline for your solution, that will automatically deploy solution to the Cloud
 7. [ ] usage of tests - unit tests, API tests, ...
 
-### My ideas
+### Own optional
 
 1. [ ] WebSocket notifications(+ chain of responsibility)
 2. [ ] Horizontal scaling thanks to distributed user session management with redis
 3. [ ] music section(japaneese trap)
+
