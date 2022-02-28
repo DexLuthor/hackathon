@@ -34,7 +34,7 @@ export class TodoService {
   }
 
   public delete(id: string) {
-    this.http.delete(this.baseUrl + "/todo/delete/" + id)
+    this.http.delete(this.baseUrl + "/todo/" + id)
       .pipe(
         switchMap(_ => this.fetchTodosObservable())
       ).subscribe(this.doOnNext);

@@ -4,6 +4,7 @@ import com.github.dexluthor.backend.domain.Todo;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public interface ITodoService {
@@ -11,7 +12,9 @@ public interface ITodoService {
 
     Mono<Todo> save(Todo todo);
 
-    Mono<Void> delete(UUID publicId);
+    Mono<Void> deleteById(UUID publicId);
+
+    Mono<Void> deleteTodoOlderThan(LocalDateTime dateTime);
 
     Mono<Todo> findById(UUID publicId);
 

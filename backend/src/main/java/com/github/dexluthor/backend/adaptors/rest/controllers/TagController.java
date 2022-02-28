@@ -3,6 +3,7 @@ package com.github.dexluthor.backend.adaptors.rest.controllers;
 import com.github.dexluthor.backend.domain.Tag;
 import com.github.dexluthor.backend.services.ITagService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -19,6 +20,7 @@ public class TagController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     Mono<Tag> save(@RequestBody Tag tag) {//todo replace with dto
         return tagService.save(tag);
     }

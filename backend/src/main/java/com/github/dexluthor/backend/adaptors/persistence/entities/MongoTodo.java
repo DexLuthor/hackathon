@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -25,4 +26,8 @@ public final class MongoTodo {
     private LocalDateTime dueDate;
     private List<Todo> subtodos;
     private List<MongoTag> tags;
+
+    @CreatedDate
+    private LocalDateTime creationDate;
+
 }

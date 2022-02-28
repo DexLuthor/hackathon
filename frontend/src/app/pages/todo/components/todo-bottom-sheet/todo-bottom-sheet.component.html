@@ -13,7 +13,7 @@
   <input [(ngModel)]="dueDate" type="datetime-local">
 </div>
 <ng-container *ngIf="(edittingTodo!.subtodos?.length ?? 0) > 0">
-  <p>SUBTASKS</p>
+  <p class="subtask_section">SUBTASKS</p>
   <input
     *ngFor="let subtask of edittingTodo!.subtodos ?? []"
     [value]="subtask.task"

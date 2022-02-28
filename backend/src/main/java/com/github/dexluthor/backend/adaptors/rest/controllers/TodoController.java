@@ -3,6 +3,7 @@ package com.github.dexluthor.backend.adaptors.rest.controllers;
 import com.github.dexluthor.backend.domain.Todo;
 import com.github.dexluthor.backend.services.ITodoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -27,13 +28,15 @@ public class TodoController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     Mono<Todo> save(@RequestBody Todo todo) {//todo replace with dto
         return todoService.save(todo);
     }
 
-    @DeleteMapping("delete/{publicId}")
+    @DeleteMapping("{publicId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     Mono<Void> delete(@PathVariable UUID publicId) {
-        return todoService.delete(publicId);
+        return todoService.deleteById(publicId);
     }
 
     @PatchMapping

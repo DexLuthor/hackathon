@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -64,9 +65,15 @@ public class TodoServiceImpl implements ITodoService {
     }
 
     @Override
-    public Mono<Void> delete(final UUID publicId) {
+    public Mono<Void> deleteById(final UUID publicId) {
         return findById(publicId)
-                .flatMap(todo -> todoRepo.deleteByPublicId(todo.getPublicId()));// todo what if error
+                .flatMap(todo -> todoRepo.deleteByPublicId(todo.getPublicId()));
+    }
+
+    @Override
+    public Mono<Void> deleteTodoOlderThan(final LocalDateTime dateTime) {
+        // return todoRepo.deleteAllTodosOlderThan(dateTime);
+        return Mono.never();
     }
 
     @Override
